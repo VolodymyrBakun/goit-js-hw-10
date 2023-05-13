@@ -1,0 +1,2 @@
+!function(){var n=refs={inputEl:document.querySelector("#search-box")};n.inputEl.addEventListener("input",(function(){var t,e=n.inputEl.value.trim();if(""===e)return alert("Потрібно щось ввести!");t="https://restcountries.com/v3.1/name/".concat(e,"?fields=name,capital,population,flag,languages"),fetch(t).then((function(n){return console.log(n.json())}))}))}();
+//# sourceMappingURL=index.494a3b0c.js.map
