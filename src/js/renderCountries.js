@@ -1,4 +1,4 @@
-import refs from './refs';
+import {refs} from './refs';
 
 export function renderCounties(markup) {
     refs.countryList.innerHTML = markup;

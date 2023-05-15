@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { fetchCountries } from './js/fetchCountries';
-import refs from './js/refs';
+import {refs} from './js/refs';
 import createCountriesList from './js/createCountriesList';
 import debounce from '../node_modules/lodash.debounce';
 import { renderCounties, renderCounty } from './js/renderCountries';
