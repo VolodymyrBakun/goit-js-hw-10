@@ -2,8 +2,6 @@ import { renderCounties, renderCounty } from './renderCountries';
 import Notiflix from 'notiflix';
 
 export default function createCountriesList(arr) {
-  console.log(arr);
-  console.log(arr.length);
   if (arr.length === 1) {
     const markup = arr.map(country => {
       const languages = country.languages;
@@ -15,7 +13,6 @@ export default function createCountriesList(arr) {
       }</p><p>Languages:  ${Object.values(languages)}</p>`;
     });
 
-    console.log(markup);
     renderCounties('');
     return renderCounty(markup);
   }
@@ -26,7 +23,6 @@ export default function createCountriesList(arr) {
         return `<li>${country.flag}  ${country.name.official}</li>`;
       })
       .join('');
-    console.log(markup);
     renderCounty('');
     return renderCounties(markup);
   }
