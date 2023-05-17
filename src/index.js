@@ -1,6 +1,6 @@
 import './css/styles.css';
 import { fetchCountries } from './js/fetchCountries';
-import {refs} from './js/refs';
+import { refs } from './js/refs';
 import createCountriesList from './js/createCountriesList';
 import debounce from '../node_modules/lodash.debounce';
 import { renderCounties, renderCounty } from './js/renderCountries';
@@ -17,5 +17,10 @@ function onSearch() {
     renderCounties('');
     return Notiflix.Notify.warning('Потрібно щось ввести!');
   }
-  fetchCountries(toFind).then(createCountriesList);
+  fetchCountries(toFind)
+    .then(createCountriesList)
+    .catch(error => {
+      Notiflix.Notify.failure('Oops, there is no country with that name');
+      console.log(error);
+    });
 }
