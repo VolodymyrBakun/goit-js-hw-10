@@ -20,7 +20,11 @@ function onSearch() {
   fetchCountries(toFind)
     .then(createCountriesList)
     .catch(error => {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
+      if (error.message === '404') {
+        renderCounty('');
+        renderCounties('');
+        Notiflix.Notify.failure('Oops, there is no country with that name');
+      }
       console.log(error);
     });
 }

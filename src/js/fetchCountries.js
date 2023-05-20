@@ -6,8 +6,6 @@ export function fetchCountries(name) {
 
   return fetch(url).then(data => {
     if (!data.ok) {
-      renderCounty('');
-      renderCounties('');
       throw new Error(data.status);
     }
     return data.json();
